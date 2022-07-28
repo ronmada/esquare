@@ -13,7 +13,7 @@
           "strict": true
         }
       },
-      "root": "",
+      "root": "esquare",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
@@ -105,6 +105,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

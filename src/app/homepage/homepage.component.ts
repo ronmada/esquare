@@ -12,10 +12,10 @@ export class HomepageComponent implements OnInit {
   constructor(private httpRequestsService: HttpRequestsService) {}
 
   ngOnInit(): void {
-    const data = {};
-    this.httpRequestsService.getBooks(data).subscribe((res) => {
-      console.log(res);
-    });
+    // const data = {};
+    // this.httpRequestsService.getBooks(data).subscribe((res) => {
+    //   console.log(res);
+    // });
     // GET https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
   }
   public clearSearch(): void {
@@ -23,10 +23,17 @@ export class HomepageComponent implements OnInit {
     this.filter();
   }
   public filter() {
-    console.log(this.search);
-    this.httpRequestsService.getBooks(this.search).subscribe((res: APIRes) => {
-      console.log(res);
-      this.books = res.items;
-    });
+    if (this.search === '') this.books = [];
+    else {
+      const search = this.search;
+      const data = {
+        search,
+      };
+      console.log(this.search);
+      this.httpRequestsService.getBooks(data).subscribe((res: APIRes) => {
+        console.log(res);
+        this.books = res.items;
+      });
+    }
   }
 }

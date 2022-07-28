@@ -5,8 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deployGithub": "npx angular-cli-ghpages --dir=dist/esquare",
-    "deployGitHubPages": "ng build --base-href 'https://ronmada.github.io/esquare/'"
+    "deploy": "ng deploy --base-href=/esquare/"
   },
   "private": true,
   "dependencies": {

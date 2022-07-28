@@ -7,7 +7,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./book-popup.component.scss'],
 })
 export class BookPopupComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
-
+  constructor(@Inject(MAT_DIALOG_DATA) private data: any) {}
+  get book() {
+    return this.data.book;
+  }
   ngOnInit(): void {}
 }

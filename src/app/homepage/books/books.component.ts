@@ -6,8 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./books.component.scss'],
 })
 export class BooksComponent implements OnInit {
-  @Input() books: Array<any> = [];
+  @Input() books!: Array<any>;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('books', this.books);
+  }
 }
