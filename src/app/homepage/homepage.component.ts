@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIRes } from '../interfaces';
 import { HttpRequestsService } from '../services/http-requests.service';
 @Component({
   selector: 'app-homepage',
@@ -19,9 +20,13 @@ export class HomepageComponent implements OnInit {
   }
   public clearSearch(): void {
     this.search = '';
-    // this.filter();
+    this.filter();
   }
   public filter() {
     console.log(this.search);
+    this.httpRequestsService.getBooks(this.search).subscribe((res: APIRes) => {
+      console.log(res);
+      this.books = res.items;
+    });
   }
 }
