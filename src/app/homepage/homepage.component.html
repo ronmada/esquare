@@ -1,0 +1,21 @@
+<p>USERNAME here</p>
+<div class="header-search">
+  <img
+    *ngIf="search !== ''"
+    class="x-icon"
+    src="/assets/x-icon.svg"
+    alt="clear"
+    (click)="clearSearch()"
+  />
+  <input
+    class="search-text"
+    type="text"
+    [(ngModel)]="search"
+    [ngModelOptions]="{ standalone: true }"
+    (ngModelChange)="filter()"
+    placeholder="search"
+  />
+</div>
+<div>
+  <app-books [books]="books"></app-books>
+</div>

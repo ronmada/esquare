@@ -1,0 +1,30 @@
+.header-search {
+  max-width: 766px;
+  position: relative;
+  border-radius: 30px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin: 77px auto 42px;
+  padding: 15px 50px;
+}
+.x-icon {
+  position: absolute;
+  inset-inline-start: 21px;
+  cursor: pointer;
+}
+.search-text {
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  width: 100%;
+}
+.search-text::placeholder {
+  color: #2e394d;
+  opacity: 1;
+  font-weight: 400;
+}
+
+.search-text:focus {
+  outline: none;
+}
