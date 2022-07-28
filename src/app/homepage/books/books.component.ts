@@ -9,7 +9,5 @@ export class BooksComponent implements OnInit {
   @Input() books!: Array<any>;
   constructor() {}
 
-  ngOnInit(): void {
-    console.log('books', this.books);
-  }
+  ngOnInit(): void {}
 }

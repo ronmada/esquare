@@ -1,4 +1,8 @@
-<div>
-  <p>{{ book.volumeInfo.title }}</p>
-  <p>{{ book.volumeInfo.description }}</p>
-</div>
+<main>
+  <div>
+    <p>{{ book.volumeInfo.title }}</p>
+    <p>{{ book.volumeInfo.description }}</p>
+  </div>
+  <button type="button" (click)="addToWishList()">add to wish list</button>
+  <button type="button" mat-dialog-close>close</button>
+</main>

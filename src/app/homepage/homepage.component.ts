@@ -11,13 +11,7 @@ export class HomepageComponent implements OnInit {
   public books: Array<any> = [];
   constructor(private httpRequestsService: HttpRequestsService) {}
 
-  ngOnInit(): void {
-    // const data = {};
-    // this.httpRequestsService.getBooks(data).subscribe((res) => {
-    //   console.log(res);
-    // });
-    // GET https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
-  }
+  ngOnInit(): void {}
   public clearSearch(): void {
     this.search = '';
     this.filter();
