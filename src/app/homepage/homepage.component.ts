@@ -9,6 +9,7 @@ import { HttpRequestsService } from '../services/http-requests.service';
 export class HomepageComponent implements OnInit {
   public search = '';
   public books: Array<any> = [];
+  public name = sessionStorage.getItem('token');
   constructor(private httpRequestsService: HttpRequestsService) {}
 
   ngOnInit(): void {}
