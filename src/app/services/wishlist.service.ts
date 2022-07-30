@@ -8,7 +8,6 @@ export class WishlistService {
     const wishList: Array<any> = this.getWishList() || [];
     wishList.push(book);
     sessionStorage.setItem('wishlistList', JSON.stringify(wishList));
-    console.log(this.getWishList());
   }
   public getWishList(): Array<any> {
     return JSON.parse(sessionStorage.getItem('wishlistList')!) || [];
