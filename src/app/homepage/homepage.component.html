@@ -1,4 +1,4 @@
-<p>Hello {{ name }}</p>
+<p class="greetings-msg">Hello: {{ name }}</p>
 <div class="header-search">
   <img
     *ngIf="search !== ''"
@@ -8,14 +8,15 @@
     (click)="clearSearch()"
   />
   <input
+    id="search"
     class="search-text"
     type="text"
     [(ngModel)]="search"
     [ngModelOptions]="{ standalone: true }"
     (ngModelChange)="filter()"
-    placeholder="search"
+    placeholder="search for any keywords"
   />
 </div>
 <div>
-  <app-books [books]="books"></app-books>
+  <app-books *ngIf="!!books.length" [books]="books"></app-books>
 </div>

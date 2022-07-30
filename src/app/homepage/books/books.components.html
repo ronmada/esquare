@@ -1,0 +1,12 @@
+<main>
+  <ng-container
+    *ngFor="let book of books | slice: (page - 1) * 10:10 * page; let i = index"
+  >
+    <app-book [book]="book"></app-book>
+  </ng-container>
+</main>
+<app-books-pagination
+  [page]="page"
+  [booksAmount]="books.length"
+  (selectPageEvent)="selectPage($event)"
+></app-books-pagination>

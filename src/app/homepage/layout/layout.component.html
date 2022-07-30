@@ -1,6 +1,6 @@
 <nav>
-  <a routerLink="/homepage">homepage </a>
-  <a routerLink="/wishList"> wish list</a>
-  <a (click)="logOut()">log out</a>
+  <a routerLinkActive="active" routerLink="/homepage">homepage </a>
+  <a routerLinkActive="active" routerLink="/wishList"> wish list</a>
+  <a class="log-out" (click)="logOut()">log out</a>
 </nav>
 <router-outlet></router-outlet>

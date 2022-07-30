@@ -1,9 +1,23 @@
-<div (click)="clickOnBook()" style="margin-block: 2em">
+<div class="book-container" (click)="clickOnBook()">
   <ng-container *ngIf="book.volumeInfo.imageLinks; else noImg">
-    <img [src]="book.volumeInfo.imageLinks.thumbnail" />
+    <img
+      [src]="book.volumeInfo.imageLinks.thumbnail"
+      width="100px"
+      height="100px"
+    />
   </ng-container>
   <ng-template #noImg>
-    <img src="assets/icon_book.png" />
+    <img src="assets/icon_book.png" width="100px" height="100px" />
   </ng-template>
-  <p>{{ book.volumeInfo.title }}</p>
+  <div class="text-container">
+    <p class="book-title">{{ book.volumeInfo.title }}</p>
+    <div class="author-container">
+      <ng-container *ngIf="book.volumeInfo.authors; else noAuthor">
+        <span *ngFor="let author of book.volumeInfo.authors" class="author">
+          {{ author }}
+        </span>
+      </ng-container>
+      <ng-template #noAuthor> < no author > </ng-template>
+    </div>
+  </div>
 </div>

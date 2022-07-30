@@ -1,0 +1,22 @@
+.page-pagination-container {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-block: 4em;
+}
+.page-number {
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.active {
+  color: green;
+}

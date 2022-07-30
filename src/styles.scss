@@ -7,6 +7,10 @@
   padding: 0;
   margin: 0;
 }
+
+a {
+  text-decoration: none;
+}
 img {
   vertical-align: middle;
   border-style: none;
@@ -21,4 +25,11 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: rgb(230, 233, 240);
+  color: black;
+}
+*:link {
+  color: black;
+}
+.mat-dialog-container {
+  height: unset !important;
 }

@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './homepage/layout/layout.component';
 import { WishListComponent } from './wish-list/wish-list.component';
+import { BooksPaginationComponent } from './homepage/books/books-pagination/books-pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { WishListComponent } from './wish-list/wish-list.component';
     LoginComponent,
     LayoutComponent,
     WishListComponent,
+    BooksPaginationComponent,
   ],
   imports: [
     BrowserModule,

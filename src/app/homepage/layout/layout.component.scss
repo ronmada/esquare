@@ -1,0 +1,34 @@
+nav {
+  display: flex;
+  margin-bottom: 2em;
+}
+nav > * {
+  cursor: pointer;
+}
+a:visited {
+  color: unset;
+}
+a {
+  font-size: 20px;
+  padding: 1em;
+  transition: color 0.3s ease-out;
+  font-weight: 700;
+}
+a.active {
+  position: relative;
+}
+.log-out {
+  margin-inline-start: auto;
+}
+.active::after {
+  color: #fb6d3a;
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 -0.15em 0 #fb6d3a inset;
+}
+a:hover {
+  color: rgb(206, 104, 8);
+}

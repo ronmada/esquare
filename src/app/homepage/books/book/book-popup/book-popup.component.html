@@ -1,8 +1,57 @@
 <main>
-  <div>
-    <p>{{ book.volumeInfo.title }}</p>
-    <p>{{ book.volumeInfo.description }}</p>
+  <ng-container *ngIf="book.volumeInfo.imageLinks; else noImg">
+    <img [src]="book.volumeInfo.imageLinks.thumbnail" />
+  </ng-container>
+  <ng-template #noImg>
+    <img src="assets/icon_book.png" />
+  </ng-template>
+  <div class="book-info-container">
+    <p>
+      Title: <span>{{ book.volumeInfo.title || "no title" }}</span>
+    </p>
+    <p>
+      Authors:
+      <ng-container *ngIf="book.volumeInfo.authors; else noAuthor">
+        <span *ngFor="let author of book.volumeInfo.authors" class="author">{{
+          author
+        }}</span>
+      </ng-container>
+      <ng-template #noAuthor><span> no author</span> </ng-template>
+    </p>
+    <p>
+      Publisher:
+      <span>{{ book.volumeInfo.publisher || "no publisher specified" }}</span>
+    </p>
+    <p>
+      Published date:
+      <span>{{
+        book.volumeInfo.publishedDate || "no published date specified"
+      }}</span>
+    </p>
+    <p>
+      Description:
+      <span>{{ book.volumeInfo.description || "no description" }}</span>
+    </p>
+    <p>
+      <a [href]="book.volumeInfo.infoLink" target="_blank">{{
+        book.volumeInfo.infoLink
+          ? "click here for more info"
+          : "no more info found"
+      }}</a>
+    </p>
   </div>
-  <button type="button" (click)="addToWishList()">add to wish list</button>
-  <button type="button" mat-dialog-close>close</button>
+  <p class="wish-list-msg" *ngIf="isBookIdOnWishList">
+    This book is in your wish list
+  </p>
+  <div class="popup-btns">
+    <button
+      *ngIf="!isBookIdOnWishList"
+      type="button"
+      class="wish-list-btn"
+      (click)="addToWishList(book)"
+    >
+      ADD TO WISH LIST
+    </button>
+    <button type="button" mat-dialog-close>CLOSE DIALOG</button>
+  </div>
 </main>

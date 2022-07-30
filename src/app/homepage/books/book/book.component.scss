@@ -1,0 +1,36 @@
+:host {
+  display: contents;
+}
+.book-container {
+  display: grid;
+  gap: 1em;
+  cursor: pointer;
+}
+.book-title {
+  font-size: 22px;
+  font-weight: 500;
+  display: inline;
+}
+.author-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.author {
+  font-size: 18px;
+}
+.author::after {
+  content: ", ";
+}
+.author:last-child::after {
+  content: none;
+}
+.text-container {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 500px) {
+  .book-container {
+    grid-template-columns: auto 1fr;
+  }
+}

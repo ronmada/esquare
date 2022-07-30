@@ -6,11 +6,11 @@
   display: flex;
   align-items: center;
   margin: 77px auto 42px;
-  padding: 15px 50px;
+  padding: 15px 30px;
 }
 .x-icon {
   position: absolute;
-  inset-inline-start: 21px;
+  inset-inline-end: 21px;
   cursor: pointer;
 }
 .search-text {
@@ -27,4 +27,9 @@
 
 .search-text:focus {
   outline: none;
+}
+.greetings-msg {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
 }

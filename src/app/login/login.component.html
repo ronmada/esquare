@@ -1,5 +1,12 @@
+<p>Login page</p>
 <form [formGroup]="loginForm" (ngSubmit)="login()">
-  <p>login works!</p>
-  <input formControlName="userName" />
-  <button type="sumbit">Login</button>
+  <div class="username-item">
+    <label for="user_name">Username:</label>
+    <input
+      id="user_name"
+      placeholder="Your username here"
+      formControlName="userName"
+    />
+  </div>
+  <button [disabled]="!loginForm.valid" type="sumbit">LOGIN</button>
 </form>

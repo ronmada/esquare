@@ -1,0 +1,10 @@
+main {
+  display: grid;
+  gap: 2em 4em;
+  justify-items: baseline;
+}
+@media (min-width: 500px) {
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(344px, 1fr));
+  }
+}

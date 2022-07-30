@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
 
 @Component({
@@ -6,11 +6,10 @@ import { AccountService } from 'src/app/services/account.service';
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
   constructor(private accountService: AccountService) {}
 
-  ngOnInit(): void {}
-  public logOut() {
+  public logOut(): void {
     this.accountService.logOut();
   }
 }

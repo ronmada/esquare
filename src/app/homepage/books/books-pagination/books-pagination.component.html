@@ -1,0 +1,11 @@
+<div class="page-pagination-container">
+  <span class="page-title">page: </span>
+  <ng-container *ngFor="let pagination of paginationArray">
+    <span
+      class="page-number"
+      [class.active]="page === pagination"
+      (click)="selectPage(pagination)"
+      >{{ pagination }}</span
+    >
+  </ng-container>
+</div>

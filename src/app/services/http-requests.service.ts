@@ -3,20 +3,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { APIRes } from '../interfaces';
-
+const MAX_RESULTS = 20;
+const KEY = environment.APIkey;
+const URL = 'https://www.googleapis.com/books/v1/volumes';
 @Injectable({
   providedIn: 'root',
 })
 export class HttpRequestsService {
-  private key = environment.APIkey;
   constructor(private http: HttpClient) {}
   public getBooks(data: any): Observable<APIRes> {
     const q = data.search;
-    const key = this.key;
-    // const q = 'flowers';
-    const url = 'https://www.googleapis.com/books/v1/volumes';
-    return this.http.get<APIRes>(url, {
-      params: { q, key },
+    return this.http.get<APIRes>(URL, {
+      params: { q, maxResults: MAX_RESULTS, KEY },
     });
   }
 }

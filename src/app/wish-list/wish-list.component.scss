@@ -1,0 +1,21 @@
+.book-list {
+  display: grid;
+  gap: 2em 4em;
+  justify-items: baseline;
+}
+@media (min-width: 500px) {
+  .book-list {
+    grid-template-columns: repeat(auto-fit, minmax(344px, 1fr));
+  }
+}
+.remove-book {
+  cursor: pointer;
+  color: red;
+  font-size: 14px;
+  font-weight: 700;
+}
+.book {
+  display: grid;
+  justify-items: baseline;
+  gap: 0.5em;
+}

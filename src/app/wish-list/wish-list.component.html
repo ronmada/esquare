@@ -1,1 +1,18 @@
-<p>wish-list works!</p>
+<!-- <app-books [books]="wishListBooks"></app-books> -->
+<ng-container *ngIf="!!wishListBooks.length; else wishListEmpty">
+  <div class="book-list">
+    <ng-container *ngFor="let book of wishListBooks">
+      <div class="book">
+        <app-book [book]="book"></app-book>
+        <button
+          class="remove-book"
+          type="button"
+          (click)="removeFromWishList(book)"
+        >
+          REMOVE
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>
+<ng-template #wishListEmpty><p>wishlist is empty :(</p></ng-template>
